@@ -1,0 +1,36 @@
+[submodule "ymuit"]
+	path = ymuit
+	url = git@github.com:3worlds/ymuit.git
+[submodule "aot"]
+	path = aot
+	url = git@github.com:3worlds/aot.git
+[submodule "omhtk"]
+	path = omhtk
+	url = git@github.com:3worlds/omhtk.git
+[submodule "omugi"]
+	path = omugi
+	url = git@github.com:3worlds/omugi.git
+[submodule "uit"]
+	path = uit
+	url = git@github.com:3worlds/uit.git
+[submodule "rvgrid"]
+	path = rvgrid
+	url = git@github.com:3worlds/rvgrid.git
+[submodule "qgraph"]
+	path = qgraph
+	url = git@github.com:3worlds/qgraph.git
+[submodule "tw-models"]
+	path = tw-models
+	url = git@github.com:3worlds/tw-models.git
+[submodule "tw-apps"]
+	path = tw-apps
+	url = git@github.com:3worlds/tw-apps.git
+[submodule "tw-core"]
+	path = tw-core
+	url = git@github.com:3worlds/tw-core.git
+[submodule "tw-uifx"]
+	path = tw-uifx
+	url = git@github.com:3worlds/tw-uifx.git
+[submodule "tw-setup"]
+	path = tw-setup
+	url = git@github.com:3worlds/tw-setup.git
