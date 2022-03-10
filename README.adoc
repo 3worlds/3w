@@ -1,0 +1,130 @@
+= The 3Worlds ecosystem simulation platform
+Jacques Gignoux <jacques.gignoux@upmc.fr>; Ian D. Davies <ian.davies@anu.edu.au>; Shayne R. Flint <shayne.flint@anu.edu.au>
+
+by *{author}*, *{author_2}* & *{author_3}*
+
+[.text-justify]
+== Overview
+
+image::3worlds.jpg[float="right",align="center",role="thumb"]
+
+3Worlds is a software for simulating the dynamics of ecosystems or, more generally, of any system that can be represented by a __dynamic graph__. More details on its purpose, motivation, design and technical details can be found in the documentation below.
+
+It aims at making modelling easier for people working in ecology and environmental science, by (1) making model building and testing very fast and (2) making large simulation experiments accessible to people with limited computing skills. It relies on state-of-the-art computing algorithms and allows end-users to focus on their problem rather than on obscure coding issues like how to find nearest neighbours or to synchronize processes running at different speeds. If you are a student or an academic in ecology or environmental sciences, then you may find it useful to quickly answer scientific questions.
+
+3Worlds is written in https://www.java.com/[java] *11*, which makes it OS-independent. It can be run on MacOS, Linux or Windows computers.
+It comprises two main applications:
+
+* __ModelMaker__, to configure a model;
+
+* __ModelRunner__, to run the model.
+
+Creating a model involves creating a configuration with _ModelMaker_ and developing some associated Java code to specify details particular to your model. To do this, you must use the https://www.eclipse.org/downloads/[Eclipse] programming software (freeware). Later versions of 3Worlds may support other packages, but at the time of writing, 3Worlds will only work with eclipse.
+
+_ModelMake_ will generate Java code for data structures specific to a model (based on the configuration file you have developed) and template java code for each process you have defined. These process templates are where you enter programming code to implement your model. You only need to write code for your processes and for model initialisation. All else is managed by 3Worlds.
+
+
+
+== Downloads
+
+=== Prerequisites
+
+You will need the following software installed on your computer before installing 3Worlds:
+
+* Java JDK (**J**ava **D**evelopment **K**it), version 11 or greater (https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html[Oracle] or http://openjdk.java.net/[open] version)
+* Java fx (graphical user interface library for java: http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html[Oracle] or http://openjdk.java.net/projects/openjfx/[open] version)
+* an https://www.eclipse.org/downloads/[Eclipse] Java development environment and add the  https://www.eclipse.org/efxclipse/install.html[e(fx)clipse plugin] required for Javafx
+
+=== Binaries
+
+3worlds applications rely on the java-fx graphical user interface library, which differs between operating systems. For this reason, we provide three different downloads according to your operating system:
+
+[width="100%",cols="1,1,1", frame="none", grid="none"]
+|====================
+| https://3worlds.github.io/3w/tw.jar[Linux] | MacOS  |  Windows
+|====================
+
+When using this software, please refer to it by quoting this article:
+
+Gignoux, J., I.D. Davies, & S.R. Flint, & J.D. Zucker (2022). 3Worlds, a simulation platform for ecosystem modelling. *(submitted)*
+
+
+== Running 3worlds
+
+[TODO: rewrite this to match with current settings]
+
+This assumes you have downloaded `3w.zip`.
+
+. Unzip `3w.zip` in your user home directory (important), keeping the internal directory tree. This will extract a file `modelMaker.jar` and a `3w` directory containing more jar files.
+. Double-click on `modelMaker.jar`. This should launch the ModelMaker application.
+. If this doesn't work, open a terminal and type `java -jar modelMaker.jar`. This should launch the ModelMaker application.
+
+WARNING: This way of launching 3Worlds is sensitive to the relative location of `modelMaker.jar` and the other jars that are in the `3w` directory, ie `modelMaker.jar` *must* be exactly one directory above `3w`.
+
+To remove this constraint, you can bypass `modelMaker.jar` by directly launching it from the jars contained in `3w`:
+[source,bash]
+----
+java -cp 3w/tw.jar au.edu.anu.twuifx.mm.MMmain
+----
+
+
+== Documentation
+
+*Reference* documentation and *tutorials* can be found https://3worlds.github.io/tw-uifx/tw-uifx/doc/reference/html/reference.html[here].
+
+*Javadoc* can be found in every library page (see below).
+
+=== Conceptual papers on which 3Worlds design is based
+
+[#Flint2006]
+Flint, S. R. (2006). __Aspect-Oriented Thinking - An approach to bridging the disciplinary divides__. PhD, Australian National University.
+
+[#Gignoux2011]
+Gignoux, J., I.D. Davies, S.R. Flint, & J.D. Zucker (2011). The Ecosystem in Practice: Interest and 
+Problems of an Old Definition for Constructing Ecological Models. _Ecosystems_ 14: 1039‑54. https://doi.org/10.1007/s10021-011-9466-2.
+
+[#Gignoux2017]
+Gignoux, J., G. Chérel, I.D. Davies, S.R. Flint, & E. Lateltin (2017). Emergence and Complex Systems: The 
+Contribution of Dynamic Graph Theory. _Ecological Complexity_ 31: 34‑49. https://doi.org/10.1016/j.ecocom.2017.02.006.
+
+
+== Libraries
+Currently, the 3Worlds project has produced the following libraries, which are available separately as sub-projects:
+
+https://github.com/3worlds/omhtk[omhtk]:: *omhtk* stands for _One More Handy Tool Kit_ and is a library of generic, very low-level interfaces (e.g. `Sizeable` for a class which instances have a size, `Resettable` for classes which can be 'reset', etc...) plus very commonly used utilities people keep rewriting all the time (e.g. an euclidian distance function or a time conversion method). Almost all other 3Worlds libraries depend on this one.
+// yatk - yet another tool kit - should it be twcommons?
+
+https://github.com/3worlds/omugi[omugi]:: *omugi* stands for _One More Graph Implementation_. It implements classes to represent dynamic graphs.
+// why not omgi ? anyway, new c compliers are usually cally yacc - yet another c compiler.
+
+https://github.com/3worlds/uit[uit]:: *uit* stands for _Universal Indexing Tree_. It implements classes to to provide efficient searching of spatial data. The base class is an `IndexingTree`. It is a generalisation of a https://en.wikipedia.org/wiki/Quadtree[QuadTree], more accurately called a https://en.wikipedia.org/wiki/K-d_tree[_k_-d tree]. It is based on work by *Paavo Toivanen* found https://dev.solita.fi/2015/08/06/quad-tree.html[here].
+
+https://github.com/3worlds/rvgrid[rvgrid]:: *rvgrid* stands for _Rendezvous Grid_. It contains a very basic implementation of https://www.adaic.org/[ADA]'s famous rendezvous system used to exchange data between parallel tasks and an implementation of a universal discrete state machine designed by *Shayne Flint*.
+
+https://github.com/3worlds/aot[aot]:: *aot* stands for _Aspect-Oriented Thinking_. It groups class for building and testing specification to build software or other human-made systems following principles developed by *Shayne Flint*.
+
+https://github.com/3worlds/qgraph[qgraph]:: *qgraph* is a _Query system for Graphs_. It implements a Query system that can check all sorts
+of conditions applying to objects. It has been designed by *Shayne Flint* for navigating graphs, but it can also be used for many other object types.
+
+https://github.com/3worlds/ymuit[ymuit]:: *ymuit* stands for _Yet More User Interface tools_. It groups tools used to implement the user interface of 3Worlds, mainly color palettes and management of graphic output, which can be useful for any  https://wiki.openjdk.java.net/display/OpenJFX[javafx]-based interface.
+
+https://github.com/3worlds/tw-core[tw-core]:: *tw-core* is the core of the 3Worlds software. It contains the base classes to design ecosystems and the simulator.
+
+https://github.com/3worlds/tw-apps[tw-apps]:: *tw-apps* contains the two applications needed to run 3Worlds, the _ModelMaker_ and the _ModelRunner_.
+
+https://github.com/3worlds/tw-uifx[tw-uifx]:: *tw-uifx* contains the  https://wiki.openjdk.java.net/display/OpenJFX[javafx]-based interface classes for _ModelMaker_ and _ModelRunner_.
+
+https://github.com/3worlds/tw-models[tw-models]:: *tw-models* is a library of models designed with 3Worlds, including test and tutorial models.
+
+https://github.com/3worlds/tw-setup[tw-setup]:: *tw-setup* is used solely to create a jar containing all dependencies used by _ModelMaker_ or _ModelRunner_. As such it is not strictly part of 3Worlds.
+
+Libraries **omugi**, **uit**, **ymuit**, and **qgraph** are of general interest and can be further developed in order to apply them to other problems. The other libraries are more specific to 3worlds.
+
+== How to contribute
+
+If you are interested in contributing to 3Worlds or to one of the above libraries, please send a mail to **[TODO: provide a neutral mail address like 3w@somewhere.org]**.
+
+== Disclaimer
+
+3Worlds is the result of many years of research and is continuously being improved. Despite our careful testing, problems may subsist. We do our best to fix them, but cannot guarantee that the code is entirely safe. It is certainly adapted to scientific research, but certainly not to any asset- or life-threatening application.
+
