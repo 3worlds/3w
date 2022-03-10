@@ -41,7 +41,7 @@ You will need the following software installed on your computer before installin
 
 [width="100%",cols="1,1,1", frame="none", grid="none"]
 |====================
-| https://3worlds.github.io/3w/tw.jar[Linux] | MacOS  |  Windows
+| tw.jar[Linux] | MacOS  |  Windows
 |====================
 
 When using this software, please refer to it by quoting this article:
