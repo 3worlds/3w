@@ -33,11 +33,11 @@ You will need the following software installed on your computer before installin
 
 * Java JDK (**J**ava **D**evelopment **K**it), version 11 or greater (https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html[Oracle] or http://openjdk.java.net/[open] version)
 * Java fx (graphical user interface library for java: http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html[Oracle] or http://openjdk.java.net/projects/openjfx/[open] version)
-* an https://www.eclipse.org/downloads/[Eclipse] Java development environment and add the  https://www.eclipse.org/efxclipse/install.html[e(fx)clipse plugin] required for Javafx
+installed (* an https://www.eclipse.org/downloads/[Eclipse] Java development environment with the  https://www.eclipse.org/efxclipse/install.html[e(fx)clipse plugin] required for Java fx)
 
 === Binaries
 
-3worlds applications rely on the java-fx graphical user interface library, which differs between operating systems. For this reason, we provide three different downloads according to your operating system:
+3worlds applications rely on the Java fx graphical user interface library, which differs between operating systems. For this reason, we provide three different downloads according to your operating system:
 
 [width="100%",cols="1,1,1", frame="none", grid="none"]
 |====================
@@ -46,7 +46,7 @@ You will need the following software installed on your computer before installin
 
 When using this software, please refer to it by quoting this article:
 
-Gignoux, J., I.D. Davies, & S.R. Flint, & J.D. Zucker (2022). 3Worlds, a simulation platform for ecosystem modelling. *(submitted)*
+Gignoux, J., I.D. Davies, & S.R. Flint (2022). 3Worlds, a simulation platform for ecosystem modelling. *(submitted)*
 
 
 == Running 3worlds
@@ -55,18 +55,12 @@ Gignoux, J., I.D. Davies, & S.R. Flint, & J.D. Zucker (2022). 3Worlds, a simulat
 
 This assumes you have downloaded `3w.zip`.
 
-. Unzip `3w.zip` in your user home directory (important), keeping the internal directory tree. This will extract a file `modelMaker.jar` and a `3w` directory containing more jar files.
-. Double-click on `modelMaker.jar`. This should launch the ModelMaker application.
-. If this doesn't work, open a terminal and type `java -jar modelMaker.jar`. This should launch the ModelMaker application.
+. Unzip `3w.zip` in your user home directory (important), keeping the internal directory tree. This will create a `3w` directory containing a single jar file called `tw.jar`.
+. __For linux users__: set the executable file permission of `tw.jar` to true (`chmod +x tw.jar`) so that it can be executed.
+. Double-click on `tw.jar`. This should launch the _ModelMaker_ application.
+. If this doesn't work, open a terminal and type `java -jar tw.jar`. This should launch the _ModelMaker_ application.
 
-WARNING: This way of launching 3Worlds is sensitive to the relative location of `modelMaker.jar` and the other jars that are in the `3w` directory, ie `modelMaker.jar` *must* be exactly one directory above `3w`.
-
-To remove this constraint, you can bypass `modelMaker.jar` by directly launching it from the jars contained in `3w`:
-[source,bash]
-----
-java -cp 3w/tw.jar au.edu.anu.twuifx.mm.MMmain
-----
-
+WARNING: the launch will be successful only if the`3w` directory is in the user directory root and if `tw.jar` is in the `3w` directory.
 
 == Documentation
 
