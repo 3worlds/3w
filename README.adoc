@@ -6,11 +6,14 @@ by *{author}*, *{author_2}* & *{author_3}*
 [.text-justify]
 == Overview
 
+.https://en.wikipedia.org/wiki/Three_Worlds_(Escher)[Three worlds], lithograph by https://en.wikipedia.org/wiki/M._C._Escher[M.C. Escher], 1955.
 image::3worlds.jpg[float="right",align="center",role="thumb"]
 
-3Worlds is a software for simulating the dynamics of ecosystems or, more generally, of any system that can be represented by a __dynamic graph__. More details on its purpose, motivation, design and technical details can be found in the documentation below.
 
-It aims at making modelling easier for people working in ecology and environmental science, by (1) making model building and testing very fast and (2) making large simulation experiments accessible to people with limited computing skills. It relies on state-of-the-art computing algorithms and allows end-users to focus on their problem rather than on obscure coding issues like how to find nearest neighbours or to synchronize processes running at different speeds. If you are a student or an academic in ecology or environmental sciences, then you may find it useful to quickly answer scientific questions.
+3Worlds is a software for simulating the dynamics of ecosystems or, more generally, of any system that can be represented by a __dynamic graph__. More details on its purpose, motivation, design and technical details can be found in the documentation below. 
+
+Here, we call _model_ a representation of an ecoystem that can be implemented with the 3worlds software in order to run simulations of its dynamics.
+3worlds aims at making modelling easier for people working in ecology and environmental science, by (1) making model building and testing very fast and (2) making large simulation experiments accessible to people with limited computing skills. It relies on state-of-the-art computing algorithms and allows end-users to focus on their problem rather than on obscure coding issues like how to find nearest neighbours or to synchronize processes running at different speeds. If you are a student or an academic in ecology or environmental sciences, then you may find it useful to quickly answer scientific questions.
 
 3Worlds is written in https://www.java.com/[java] *11*, which makes it OS-independent. It can be run on MacOS, Linux or Windows computers.
 It comprises two main applications:
@@ -19,9 +22,9 @@ It comprises two main applications:
 
 * __ModelRunner__, to run the model.
 
-Creating a model involves creating a configuration with _ModelMaker_ and developing some associated Java code to specify details particular to your model. To do this, you must use the https://www.eclipse.org/downloads/[Eclipse] programming software (freeware). Later versions of 3Worlds may support other packages, but at the time of writing, 3Worlds will only work with eclipse.
+Creating a model involves creating a configuration with _ModelMaker_ and developing some associated Java code to specify details particular to your model. Unless you are an experienced programmer, to do this, you must use the https://www.eclipse.org/downloads/[Eclipse] programming software (freeware). Later versions of 3Worlds may support other programming software, but at the time of writing, 3Worlds will only work with eclipse.
 
-_ModelMake_ will generate Java code for data structures specific to a model (based on the configuration file you have developed) and template java code for each process you have defined. These process templates are where you enter programming code to implement your model. You only need to write code for your processes and for model initialisation. All else is managed by 3Worlds.
+_ModelMaker_ will generate Java code for data structures specific to a model (based on the configuration file you have developed) and template java code for each process you have defined. These process templates are where you enter programming code to implement your model. You only need to write code for your processes and for model initialisation. All else is managed by 3Worlds.
 
 
 
@@ -31,13 +34,14 @@ _ModelMake_ will generate Java code for data structures specific to a model (bas
 
 You will need the following software installed on your computer before installing 3Worlds:
 
-* Java JDK (**J**ava **D**evelopment **K**it), version 11 or greater (https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html[Oracle] or http://openjdk.java.net/[open] version)
-* Java fx (graphical user interface library for java: http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html[Oracle] or http://openjdk.java.net/projects/openjfx/[open] version)
-installed (* an https://www.eclipse.org/downloads/[Eclipse] Java development environment with the  https://www.eclipse.org/efxclipse/install.html[e(fx)clipse plugin] required for Java fx)
+* *Java JDK* (**J**ava **D**evelopment **K**it), version 11 or greater (https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html[Oracle] or http://openjdk.java.net/[open] version)
+* *Java fx* (graphical user interface library for java: http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html[Oracle] or http://openjdk.java.net/projects/openjfx/[open] version)
+installed
+* an https://www.eclipse.org/downloads/[**Eclipse**] Java development environment with the  https://www.eclipse.org/efxclipse/install.html[**e(fx)clipse** plugin] required for **Java fx**)
 
 === Binaries
 
-3worlds applications rely on the Java fx graphical user interface library, which differs between operating systems. For this reason, we provide three different downloads according to your operating system:
+3worlds applications rely on the *Java fx* graphical user interface library, which differs between operating systems. For this reason, we provide three different downloads according to your operating system:
 
 [width="100%",cols="1,1,1", frame="none", grid="none"]
 |====================
@@ -46,16 +50,15 @@ installed (* an https://www.eclipse.org/downloads/[Eclipse] Java development env
 
 When using this software, please refer to it by quoting this article:
 
-Gignoux, J., I.D. Davies, & S.R. Flint (2022). 3Worlds, a simulation platform for ecosystem modelling. *(submitted)*
+Gignoux J., I.D. Davies, & S.R. Flint (2022). 3Worlds, a simulation platform for ecosystem modelling. *(submitted)*
 
 
 == Running 3worlds
 
-[TODO: rewrite this to match with current settings]
+Once you have downloaded `tw.jar`:
 
-This assumes you have downloaded `3w.zip`.
-
-. Unzip `3w.zip` in your user home directory (important), keeping the internal directory tree. This will create a `3w` directory containing a single jar file called `tw.jar`.
+. Create a directory named `3w` in your user account root directory
+. Copy or move `tw.jar` to the `3w` directory
 . __For linux users__: set the executable file permission of `tw.jar` to true (`chmod +x tw.jar`) so that it can be executed.
 . Double-click on `tw.jar`. This should launch the _ModelMaker_ application.
 . If this doesn't work, open a terminal and type `java -jar tw.jar`. This should launch the _ModelMaker_ application.
@@ -116,7 +119,7 @@ Libraries **omugi**, **uit**, **ymuit**, and **qgraph** are of general interest 
 
 == How to contribute
 
-If you are interested in contributing to 3Worlds or to one of the above libraries, please send a mail to **[TODO: provide a neutral mail address like 3w@somewhere.org]**.
+If you are interested in contributing to 3Worlds or to one of the above libraries, please leave a message to the developers.
 
 == Disclaimer
 
