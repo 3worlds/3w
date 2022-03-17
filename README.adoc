@@ -35,9 +35,23 @@ _ModelMaker_ will generate Java code for data structures specific to a model (ba
 You will need the following software installed on your computer before installing 3Worlds:
 
 * *Java JDK* (**J**ava **D**evelopment **K**it), version 11 or greater (https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html[Oracle] or http://openjdk.java.net/[open] version)
-* *Java fx* (graphical user interface library for java: http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html[Oracle] or http://openjdk.java.net/projects/openjfx/[open] version)
-installed
-* an https://www.eclipse.org/downloads/[**Eclipse**] Java development environment with the  https://www.eclipse.org/efxclipse/install.html[**e(fx)clipse** plugin] required for **Java fx**)
+** to check if *java* is installed on your computer, open a terminal and type `java -version` on the command-line. If java is installed, it should return the version, e.g. `openjdk version "11.0.14" 2022-01-18`.
+** to install java: 
+*** linux users: open a terminal and type `sudo apt-get install openjdk-11-jdk`
+*** windows and MacOS users: install from the websites above
+
+* *Java fx* (graphical user interface library for java: https://openjfx.io/[open] version)
+** to check if *java-fx* is installed on your computer:
+*** linux users: open a terminal and type `sudo apt-get install openjfx`. This should return a message saying this is already installed, or propose you to install it.
+*** MacOS and windows users:  search in the installed application panel if you find the *java-fx* icon + name.
+** to intall *java-fx* on your computer:
+*** linux users: open a terminal and type `sudo apt-get install openjfx`.
+*** windows and MacOS users: 
+. download the archive from the above web site, following the `download` link and specifying your OS in the list dropbox in the middle of the page; select the `JDK` version.
+.  then, follow the installation instructions matching your operating system https://openjfx.io/openjfx-docs/#install-javafx[here]. Normally, only the first step (setting the environment variable) should is required to run 3Worlds.
+
+* an https://www.eclipse.org/downloads/[**Eclipse**] Java development environment with the  https://www.eclipse.org/efxclipse/install.html[**e(fx)clipse** plugin] required for **Java fx**). **NOTE**: this is only required if you want to develop new models in 3worlds. To use the library of already installed models, tutorials and test models, you can skip this step. [TODO: expand this later as installing eclipse can quickly become a nightmare]
+
 
 === Binaries
 
@@ -45,7 +59,7 @@ installed
 
 [width="100%",cols="1,1,1", frame="none", grid="none"]
 |====================
-| link:tw.jar[Linux] | MacOS  |  Windows
+| link:tw.jar[Linux] | link:bin/mac/tw.jar[MacOS]  |  link:bin/windows/tw.jar[Windows]
 |====================
 
 When using this software, please refer to it by quoting this article:
@@ -59,7 +73,7 @@ Once you have downloaded `tw.jar`:
 
 . Create a directory named `3w` in your user account root directory
 . Copy or move `tw.jar` to the `3w` directory
-. __For linux users__: set the executable file permission of `tw.jar` to true (`chmod +x tw.jar`) so that it can be executed.
+. __For linux users__: set the executable file permission of `tw.jar` to true (`chmod +x tw.jar` in a terminal, in the directory where the file is) so that it can be executed.
 . Double-click on `tw.jar`. This should launch the _ModelMaker_ application.
 . If this doesn't work, open a terminal and type `java -jar tw.jar`. This should launch the _ModelMaker_ application.
 
