@@ -59,8 +59,11 @@ You will need the following software installed on your computer before installin
 
 [width="100%",cols="1,1,1", frame="none", grid="none"]
 |====================
-| link:tw.jar[Linux] | link:bin/mac/tw.jar[MacOS]  |  link:bin/windows/tw.jar[Windows]
+| https://dropsu.sorbonne-universite.fr/s/Zs8HdYfKLWN9KLg[Linux] | https://dropsu.sorbonne-universite.fr/s/6nXkKzHcoaZMw23[MacOS]  |  link:bin/windows/tw.jar[Windows]
 |====================
+
+
+
 
 When using this software, please refer to it by quoting this article:
 
