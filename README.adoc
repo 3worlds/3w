@@ -50,7 +50,7 @@ You will need the following software installed on your computer before installin
 . download the archive from the above web site, following the `download` link and specifying your OS in the list dropbox in the middle of the page; select the `JDK` version.
 .  then, follow the installation instructions matching your operating system https://openjfx.io/openjfx-docs/#install-javafx[here]. Normally, only the first step (setting the environment variable) should is required to run 3Worlds.
 
-* an https://www.eclipse.org/downloads/[**Eclipse**] Java development environment with the  https://www.eclipse.org/efxclipse/install.html[**e(fx)clipse** plugin] required for **Java fx**). **NOTE**: this is only required if you want to develop new models in 3worlds. To use the library of already installed models, tutorials and test models, you can skip this step. [TODO: expand this later as installing eclipse can quickly become a nightmare]
+* an https://www.eclipse.org/downloads/[**Eclipse**] Java development environment with the  https://www.eclipse.org/efxclipse/install.html[**e(fx)clipse** plugin] required for **Java fx**). **NOTE**: this is only required if you want to develop new models in 3worlds. To use the library of already installed models, tutorials and test models, you can skip this step.
 
 
 === Binaries
