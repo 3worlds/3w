@@ -10,23 +10,21 @@ by *{author}*, *{author_2}* & *{author_3}*
 image::3worlds.jpg[float="right",align="center",role="thumb"]
 
 
-3Worlds is a software for simulating the dynamics of ecosystems or, more generally, of any system that can be represented by a __dynamic graph__. More details on its purpose, motivation, design and technical details can be found in the documentation below. 
+3Worlds is a software for simulating the dynamics of ecosystems or, more generally, of any system that can be represented by a __dynamic graph__. More details on its purpose, motivation, design and technical details can be found in the documentation via the link below. 
 
-Here, we call _model_ a representation of an ecoystem that can be implemented with the 3worlds software in order to run simulations of its dynamics.
-3worlds aims at making modelling easier for people working in ecology and environmental science, by (1) making model building and testing very fast and (2) making large simulation experiments accessible to people with limited computing skills. It relies on state-of-the-art computing algorithms and allows end-users to focus on their problem rather than on obscure coding issues like how to find nearest neighbours or to synchronize processes running at different speeds. If you are a student or an academic in ecology or environmental sciences, then you may find it useful to quickly answer scientific questions.
+3worlds aims at making modelling easier for people working in ecology and environmental science, by: 1) focusing on system representation (the ecosystem) rather than simulation techniques (e.g. discrete event, multi-agent etc.) all of which can be accomplished within 3Worlds and, 2) facilitating model comparison to establish an appropriate level of abstraction for the studied system by grounding all models upon the same concept of the ecosystem.
 
-3Worlds is written in https://www.java.com/[java] *11*, which makes it OS-independent. It can be run on MacOS, Linux or Windows computers.
-It comprises two main applications:
+3Worlds uses state-of-the-art computing algorithms and allows end-users to focus on their problem rather than on obscure coding issues like how to find nearest neighbours or to synchronize processes running at different speeds. If you are a student or an academic in ecology or environmental sciences, then you may find it useful to quickly answer scientific questions.
+
+3Worlds is written in Java and can run on Mac, Linux or Windows computers. It comprises two main applications:
 
 * __ModelMaker__, to configure a model;
 
 * __ModelRunner__, to run the model.
 
-Creating a model involves creating a configuration with _ModelMaker_ and developing some associated Java code to specify details particular to your model. Unless you are an experienced programmer, to do this, you must use the https://www.eclipse.org/downloads/[Eclipse] programming software (freeware). Later versions of 3Worlds may support other programming software, but at the time of writing, 3Worlds will only work with eclipse.
+Creating a model involves creating a configuration with _ModelMaker_ and developing some associated Java code to specify details particular to your model. To do this, you must use the https://www.eclipse.org/downloads/[Eclipse] programming software (freeware). Later versions of 3Worlds may support other programming software, but at the time of writing, 3Worlds will only work with Eclipse.
 
 _ModelMaker_ will generate Java code for data structures specific to a model (based on the configuration file you have developed) and template java code for each process you have defined. These process templates are where you enter programming code to implement your model. You only need to write code for your processes and for model initialisation. All else is managed by 3Worlds.
-
-
 
 == Downloads
 
@@ -44,14 +42,14 @@ You will need the following software installed on your computer before installin
 ** to check if *java-fx* is installed on your computer:
 *** linux users: open a terminal and type `sudo apt-get install openjfx`. This should return a message saying this is already installed, or propose you to install it.
 *** MacOS and windows users:  search in the installed application panel if you find the *java-fx* icon + name.
-** to intall *java-fx* on your computer:
+** to install *java-fx* on your computer:
 *** linux users: open a terminal and type `sudo apt-get install openjfx`.
 *** windows and MacOS users: 
 . download the archive from the above web site, following the `download` link and specifying your OS in the list dropbox in the middle of the page; select the `JDK` version.
-.  then, follow the installation instructions matching your operating system https://openjfx.io/openjfx-docs/#install-javafx[here]. Normally, only the first step (setting the environment variable) should is required to run 3Worlds.
+.  then, follow the installation instructions matching your operating system https://openjfx.io/openjfx-docs/#install-javafx[here]. Normally, only the first step (setting the environment variable) is required to run 3Worlds.
 
-* an https://www.eclipse.org/downloads/[**Eclipse**] Java development environment with the  https://www.eclipse.org/efxclipse/install.html[**e(fx)clipse** plugin] required for **Java fx**). **NOTE**: this is only required if you want to develop new models in 3worlds. To use the library of already installed models, tutorials and test models, you can skip this step.
-
+* an https://www.eclipse.org/downloads/[**Eclipse**] Java development environment. **NOTE**: this is only required if you want to develop new models in 3worlds. To use the library of already installed models, tutorials and test models, you can skip this step.
+* The statistics package https://www.r-project.org/[**R**] is required to run and analyse experiments.
 
 === Binaries
 
@@ -78,7 +76,7 @@ Once you have downloaded `tw.jar`:
 . Copy or move `tw.jar` to the `3w` directory
 . __For linux users__: set the executable file permission of `tw.jar` to true (`chmod +x tw.jar` in a terminal, in the directory where the file is) so that it can be executed.
 . Double-click on `tw.jar`. This should launch the _ModelMaker_ application.
-. If this doesn't work, open a terminal and type `java -jar tw.jar`. This should launch the _ModelMaker_ application.
+. If this doesn't work, open a terminal and type `java -jar tw.jar`. This should launch the _ModelMaker_ application. However, to see log messages generated during execution, it is better to run `tw.jar` from a terminal.
 
 WARNING: the launch will be successful only if the`3w` directory is in the user directory root and if `tw.jar` is in the `3w` directory.
 
@@ -91,7 +89,7 @@ WARNING: the launch will be successful only if the`3w` directory is in the user 
 === Conceptual papers on which 3Worlds design is based
 
 [#Flint2006]
-Flint, S. R. (2006). __Aspect-Oriented Thinking - An approach to bridging the disciplinary divides__. PhD, Australian National University.
+Flint, S. R. (2006). __Aspect-Oriented Thinking - An approach to bridging the disciplinary divides__. PhD, Australian National University. https://openresearch-repository.anu.edu.au/handle/1885/49328.
 
 [#Gignoux2011]
 Gignoux, J., I.D. Davies, S.R. Flint, & J.D. Zucker (2011). The Ecosystem in Practice: Interest and 
@@ -132,7 +130,7 @@ https://github.com/3worlds/tw-models[tw-models]:: *tw-models* is a library of mo
 
 https://github.com/3worlds/tw-setup[tw-setup]:: *tw-setup* is used solely to create a jar containing all dependencies used by _ModelMaker_ or _ModelRunner_. As such it is not strictly part of 3Worlds.
 
-Libraries **omugi**, **uit**, **ymuit**, and **qgraph** are of general interest and can be further developed in order to apply them to other problems. The other libraries are more specific to 3worlds.
+Libraries **omhtk**, **omugi**, **uit**, **rvgrid**, **aot**, **qgraph**, and **ymuit** are of general interest and can be further developed in order to apply them to other problems. The other libraries (prefixed with **tw-**) are more specific to 3worlds. Currently, we do not provide a javadoc for the latter as it would be useful only to 3worlds developers.
 
 == How to contribute
 
