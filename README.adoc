@@ -59,7 +59,7 @@ The binary (jar) files are named `tw-linux.jar`, `tw-mac.jar` and `tw-win.jar` (
 
 When using this software, please refer to it by quoting:
 
-- Gignoux J., I.D. Davies, & S.R. Flint (2022). 3Worlds, a simulation platform for ecosystem modelling. *(submitted)* for software design and general features;
+- Gignoux J., I.D. Davies, & S.R. Flint (2022). 3Worlds, a simulation platform for ecosystem modelling. https://doi.org/10.1016/j.ecolmodel.2022.110121[_Ecological Modelling_, 473:110121] for software design and general features;
 - Gignoux J., I.D. Davies, & S.R. Flint (2022). 3worlds: a software for ecosystem simulation, version 1.0.2, https://zenodo.org/record/7038145[DOI:10.5281/zenodo.7038145] for the software itself.
 
 == Running 3worlds
